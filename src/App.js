@@ -1,10 +1,14 @@
-import React from 'react';
-
+import React from "react";
+import { FirebaseContext } from "./firebase/index";
 
 function App() {
   return (
     <div>
-      TEST
+      <FirebaseContext.Consumer>
+        {firebase => {
+          return <div>Firebase is being rendered here</div>;
+        }}
+      </FirebaseContext.Consumer>
     </div>
   );
 }
